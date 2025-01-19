@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHINMA - Cagayan de Oro College</title>
+
+    <!-- FAVICON / WEB ICON -->
+    <link rel="icon" href="./assets/cocicon.png" type="image/png" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- GOOGLE FONTS : MONTSERRAT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Toastr CSS -->
+    <link href="./node_modules/toastr/build/toastr.min.css" rel="stylesheet" />
+
+    <!-- Styles.css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="bg-light">
+    <!-- Main Box -->
+    <div class="card shadow-lg mx-auto mt-5 px-4 py-3" style="max-width: 500px">
+      <div class="card-body">
+        <!-- Header with Logo and Title -->
+        <div class="d-flex align-items-center mb-4">
+          <img
+            src="./assets/cocicon.png"
+            alt="CDO Logo"
+            class="me-3"
+            style="height: 100px"
+          />
+          <div>
+            <h1 class="h5 fw-bold mb-0">PHINMA - Cagayan de Oro College</h1>
+            <p class="text-muted mb-0">Library Attendance</p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="attendance-form">
+          <div class="mb-3">
+            <label for="student-id" class="form-label fw-bold fs-5" >Student ID</label>
+            <input
+              type="text"
+              id="student-id"
+              class="form-control"
+              placeholder="Enter Student ID"
+            />
+          </div>
+          <!-- Load Student Data Button -->
+          <div class="mb-3">
+            <button
+              type="button"
+              class="btn btn-dark"
+              id="load-data"
+              style="width: auto"
+            >
+              Load Student Data
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Table Card -->
+    <div
+      class="card shadow-lg mx-auto mt-4 d-none"
+      style="max-width: 800px"
+      id="table-container"
+    >
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered text-center">
+            <thead class="table-light">
+              <tr>
+                <th>STUDENT NAME</th>
+                <th>STUDENT ID</th>
+                <th>YEAR LEVEL</th>
+                <th>COURSE</th>
+                <th>CHECKED IN AT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="student-name">---</td>
+                <td id="student-id-data">---</td>
+                <td id="year-level">---</td>
+                <td id="course">---</td>
+                <td id="check-in-time">---</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Check In Button -->
+    <div
+      class="d-grid mx-auto mt-3 d-none"
+      style="max-width: 100px"
+      id="check-in-container"
+    >
+      <button type="submit" class="btn btn-dark" style="width: auto">
+        Check In
+      </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Toastr JS -->
+    <script src="./node_modules/toastr/build/toastr.min.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Toastr Configuration -->
+    <script src="./js/toastr-config.js"></script>
+    <!-- Custom JS -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>

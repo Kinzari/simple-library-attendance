@@ -1,0 +1,15 @@
+/* General Font */
+body {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Toastr Positioning */
+  #toast-container {
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+  
+  .card {
+    border-radius: 10px; /* Add rounded corners to cards */
+  }
+  
