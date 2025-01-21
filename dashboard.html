@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHINMA - Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/cocicon.png" type="image/png" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts: Montserrat -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="bg-light">
+    <div class="container-fluid">
+      <!-- Sidebar -->
+      <div class="row">
+        <aside class="col-md-1 border-end bg-white py-3 d-flex flex-column">
+          <nav class="d-flex flex-column align-items-start gap-3">
+            <!-- Logo -->
+            <div class="d-flex justify-content-center w-100 mb-4">
+              <img
+                src="./assets/cocicon.png"
+                alt="Logo"
+                class="mb-3"
+                style="width: 100px"
+              />
+            </div>
+            <!-- Dashboard Icon and Name -->
+            <button
+              class="btn btn-outline-dark w-100 d-flex align-items-center gap-2"
+              onclick="fetchAttendanceData()"
+            >
+              <i class="bi bi-house-door"></i>
+              <span>Dashboard</span>
+            </button>
+            <!-- Reports Icon and Name -->
+            <button
+              class="btn btn-outline-dark w-100 d-flex align-items-center gap-2"
+              onclick="showAttendanceReport()"
+            >
+              <i class="bi bi-file-earmark-bar-graph"></i>
+              <span>Reports</span>
+            </button>
+          </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="col-md-10 py-4">
+          <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h1 class="fw-bold">PHINMA - COC DASHBOARD</h1>
+              <!-- <button
+                class="btn btn-dark"
+                id="endDayBtn"
+                onclick="endDayEvent()"
+              >
+                End Day Event
+              </button> -->
+            </div>
+
+            <!-- Search Filters -->
+            <div class="row mb-4">
+              <div class="col-md-4">
+                <label for="search" class="form-label">Search</label>
+                <input
+                  type="text"
+                  id="search"
+                  class="form-control"
+                  placeholder="Search Student Name, ID..."
+                  onkeyup="filterAttendance()"
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="yearLevel" class="form-label">Year Level</label>
+                <select
+                  id="yearLevel"
+                  class="form-select"
+                  onchange="filterAttendance()"
+                >
+                  <option value="All">All</option>
+                  <option value="1st Year">1st Year</option>
+                  <option value="2nd Year">2nd Year</option>
+                  <option value="3rd Year">3rd Year</option>
+                  <option value="4th Year">4th Year</option>
+                  <option value="5th Year">5th Year</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="course" class="form-label">Course</label>
+                <select
+                  id="course"
+                  class="form-select"
+                  onchange="filterAttendance()"
+                >
+                  <option value="All">All</option>
+                  <option value="College of Management and Accountancy">
+                    College of Management and Accountancy
+                  </option>
+                  <option value="College of Education">
+                    College of Education
+                  </option>
+                  <option value="School of Criminology and Criminal Justice">
+                    School of Criminology and Criminal Justice
+                  </option>
+                  <option value="College of Engineering and Architechture">
+                    College of Engineering and Architechture
+                  </option>
+                  <option value="College of Allied Health Sciences">
+                    College of Allied Health Sciences
+                  </option>
+                  <option value="College of Information Technology">
+                    College of Information Technology
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Attendance Table -->
+            <div class="card">
+              <div class="card-header fw-bold">ATTENDANCE LIST</div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered text-center">
+                    <thead>
+                      <tr>
+                        <th>STUDENT NAME</th>
+                        <th>STUDENT ID</th>
+                        <th>YEAR LEVEL</th>
+                        <th>COURSE</th>
+                        <th>CHECK-IN TIME</th>
+                      </tr>
+                    </thead>
+                    <tbody id="attendanceTable">
+                      <!-- Data will populate here dynamically -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./js/dashboard.js"></script>
+  </body>
+</html>

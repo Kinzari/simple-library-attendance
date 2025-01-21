@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2025 at 04:51 PM
+-- Generation Time: Jan 21, 2025 at 11:32 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -45,7 +45,9 @@ CREATE TABLE `attendance` (
 --
 
 INSERT INTO `attendance` (`id`, `student_id`, `first_name`, `middle_name`, `family_name`, `suffix`, `year_level`, `course`, `date`, `check_in_time`) VALUES
-(1, '02-2223-05976', 'Jerimiah', NULL, 'Espartero', NULL, '3rd Year', 'College of Information Technology', '2025-01-19', '23:29:48');
+(1, '02-2223-05976', 'Jerimiah', NULL, 'Espartero', NULL, '3rd Year', 'College of Information Technology', '2025-01-19', '23:29:48'),
+(2, '02-2021-01409', 'Mar Louis P.', NULL, 'Go', NULL, '2nd Year', 'College of Engineering and Architecture', '2025-01-20', '20:26:58'),
+(3, '02-2223-03206', 'Van Morre A.', NULL, 'Guangco', NULL, '3rd Year', 'College of Allied Health Sciences', '2025-01-20', '20:27:02');
 
 -- --------------------------------------------------------
 
@@ -74,11 +76,11 @@ INSERT INTO `students` (`student_id`, `first_name`, `middle_name`, `family_name`
 ('02-2-1920-02724', 'Charlie Gin', 'Absin', 'Pimentel', NULL, '2', 'College of Engineering and Architecture'),
 ('02-2021-00143', 'James', NULL, 'Antipuesto', NULL, '3', 'College of Management and Accountancy'),
 ('02-2021-00344', 'Kristopher', 'Viado', 'Dichos', NULL, '3', 'College of Management and Accountancy'),
-('02-2021-01409', 'Mar Louis', NULL, 'Pimentel', 'Go', '2', 'College of Engineering and Architecture'),
+('02-2021-01409', 'Mar Louis', 'Pimentel', 'Go', NULL, '2', 'College of Engineering and Architecture'),
 ('02-2223-01741', 'Rudgel', 'Sales', 'Tagaan', NULL, '3', 'College of Engineering and Architecture'),
 ('02-2223-01945', 'Laurenz', NULL, 'Anchez', NULL, '3', 'College of Education'),
 ('02-2223-03206', 'Van Morre', 'Acaylar', 'Guangco', NULL, '3', 'College of Allied Health Sciences'),
-('02-2223-05976', 'Jerimiah', NULL, 'Espartero', NULL, '3', 'College of Information Technology'),
+('02-2223-05976', 'Jerimiah Exequiel', NULL, 'Espartero', NULL, '3', 'College of Information Technology'),
 ('02-2223-10440', 'Andrei', 'P', 'Gopher', 'G', '3', 'College of Management and Accountancy'),
 ('02-2425-012345', 'Arc', NULL, 'CBT', NULL, '2', 'School of Criminology and Criminal Justice'),
 ('02-2425-12345', 'Pitok', 'Kulas', 'Batalota', NULL, '3', 'College of Engineering and Architecture');
@@ -108,7 +110,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
